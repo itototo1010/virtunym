@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+# Removing the shadow from the logo on the top page (index.html)
+
+# Adjusted HTML for index.html without shadow
+index_html_no_shadow = '''<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
@@ -9,14 +12,13 @@
 </head>
 <body class="bg-teal-500 flex flex-col items-center justify-center min-h-screen">
   <header class="text-center mb-6">
-    <img src="5-31.png" alt="#VirtuNymロゴ" class="mx-auto w-1/3 md:w-1/4 mb-6">
-    <h1 class="text-5xl font-bold text-gray-900 mb-2">VirtuNym</h1>
+    <img src="5-31.png" alt="#VirtuNymロゴ" class="mx-auto w-2/3 md:w-1/3 lg:w-1/4 mb-8">
+    <h1 class="text-6xl font-bold text-gray-900 mb-4">VirtuNym</h1>
     <p class="text-2xl text-gray-800">仮想空間に存在する「もう一人の自分」</p>
   </header>
 
   <main class="text-center">
     <section class="mb-12">
-      <img src="toto.jpeg" alt="VirtuNym Character" class="mx-auto w-1/2 md:w-1/3 rounded-lg shadow-lg mb-4">
       <p class="text-xl text-gray-700 max-w-2xl mx-auto mb-6">
         現実世界の制約から解放され、無限の可能性を秘めたアバターとして表現される「VirtuNym」。
         ユーザー自身の思考や感情、創造性を反映し、現実世界での自己表現の補完、
@@ -24,16 +26,92 @@
       </p>
     </section>
 
-    <a href="liver.html" class="bg-gray-900 text-white py-2 px-6 rounded-full shadow hover:bg-gray-800 mb-6">Liver</a>
-    <a href="fan-fiction.html" class="bg-gray-900 text-white py-2 px-6 rounded-full shadow hover:bg-gray-800 mb-6">Fan-Fiction</a>
-    <a href="news.html" class="bg-gray-900 text-white py-2 px-6 rounded-full shadow hover:bg-gray-800 mb-6">News</a>
+    <a href="liver.html" class="bg-gray-900 text-white py-3 px-8 rounded-full shadow hover:bg-gray-800 mb-6 inline-block">Liver</a>
+    <a href="fan-fiction.html" class="bg-gray-900 text-white py-3 px-8 rounded-full shadow hover:bg-gray-800 mb-6 inline-block">Fan-Fiction</a>
+    <a href="news.html" class="bg-gray-900 text-white py-3 px-8 rounded-full shadow hover:bg-gray-800 mb-6 inline-block">News</a>
 
     <!-- X (Twitter) タイムライン埋め込み -->
-    <section class="mb-12">
+    <section class="mt-12">
       <h2 class="text-4xl font-bold text-gray-900 mb-4">#VirtuNym Tweets</h2>
       <a class="twitter-timeline" href="https://twitter.com/hashtag/VirtuNym?src=hash">#VirtuNym Tweets</a> 
       <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </section>
   </main>
 </body>
-</html>
+</html>'''
+
+# Re-create the zip with the logo shadow removed
+final_no_shadow_files = [
+    {"path": "index.html", "content": index_html_no_shadow},
+    {"path": "fan-fiction.html", "content": '''<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>VirtuNym - Fan-Fiction</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-teal-500 min-h-screen p-8">
+  <header class="text-center mb-12">
+    <h1 class="text-4xl font-bold text-gray-900 mb-4">Fan-Fiction Gallery</h1>
+    <p class="text-xl text-gray-800">ユーザーが作成したストーリーやクリエイティブなコンテンツをこちらでご覧ください。</p>
+    <a href="index.html" class="text-white bg-gray-800 py-2 px-4 rounded-full hover:bg-gray-700">ホームに戻る</a>
+  </header>
+  <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="bg-white p-4 rounded-lg shadow-lg text-center">
+      <img src="fanart1.png" alt="Fan-Fiction 1" class="w-full rounded-lg mb-4">
+      <h2 class="text-xl font-bold text-teal-500">The Virtual Awakening</h2>
+    </div>
+    <div class="bg-white p-4 rounded-lg shadow-lg text-center">
+      <img src="fanart2.png" alt="Fan-Fiction 2" class="w-full rounded-lg mb-4">
+      <h2 class="text-xl font-bold text-teal-500">Rise of the VirtuNym</h2>
+    </div>
+    <div class="bg-white p-4 rounded-lg shadow-lg text-center">
+      <img src="biju.jpg" alt="九本カモの美術教室" class="w-full rounded-lg mb-4">
+      <h2 class="text-xl font-bold text-teal-500">九本カモの美術教室</h2>
+    </div>
+  </main>
+</body>
+</html>'''},
+    {"path": "news.html", "content": '''<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>VirtuNym - News</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-teal-500 min-h-screen p-8">
+  <header class="text-center mb-12">
+    <h1 class="text-4xl font-bold text-gray-900 mb-4">VirtuNym News</h1>
+    <p class="text-xl text-gray-800">VirtuNymに関する最新ニュースや更新情報をチェックしてください。</p>
+    <a href="index.html" class="text-white bg-gray-800 py-2 px-4 rounded-full hover:bg-gray-700">ホームに戻る</a>
+  </header>
+  <main class="text-center">
+    <section class="mb-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">最新ニュース</h2>
+      <ul class="text-xl text-gray-700">
+        <li>2024年4月1日: VirtuNym 2.0 リリース</li>
+        <li>2024年5月15日: VirtuNymが主要VRプラットフォームと提携</li>
+        <li>新ライバー作成中！</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>'''}
+]
+
+# Create the zip file again without the shadow around the logo
+final_no_shadow_zip_path = "/mnt/data/virtunym_no_shadow_site.zip"
+with zipfile.ZipFile(final_no_shadow_zip_path, 'w') as zipf:
+    # Add the updated HTML files without shadow
+    for file in final_no_shadow_files:
+        zipf.writestr(file["path"], file["content"])
+    
+    # Add the image files as usual
+    for img in image_files:
+        zipf.write(img["content"], img["path"])
+
+final_no_shadow_zip_path
